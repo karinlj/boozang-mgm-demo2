@@ -4,8 +4,6 @@
 
 Application in progress for prototyping new Boozang Managment. Made with Vue.js, Typescript and Json-server as backend.
 
-![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
-
 ## Prerequisites
 
 NodeJS
