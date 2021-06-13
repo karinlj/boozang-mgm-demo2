@@ -1,29 +1,52 @@
-# boozang-dashboard
+# Boozang Management prototype #2
 
-## Project setup
+## Description
+
+Application in progress for prototyping new Boozang Managment. Made with Vue.js, Typescript and Json-server as backend.
+
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
+
+## Prerequisites
+
+NodeJS
+
+## Installation
+
+To clone
+
+`git clone https://github.com/karinlj/boozang-mgm-demo2.git`
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## to run
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## To build
+
 ```
 npm run build
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+Then use the dist folder you get.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Built With
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- vue.js
+  -Typescript
+- SCSS
+- Materialize.css
+- Json-server
+
+## Author
+
+- **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
+
+## Acknowledgements
+
+Thank's to The Net Ninja.  
+`https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg`

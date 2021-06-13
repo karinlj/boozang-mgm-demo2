@@ -1,0 +1,26 @@
+{
+    "tests":[
+        {
+            "id": 1,
+            "name": "Test1",
+            "hasPassed": true,
+            "duration": "3min30s",
+            "latestExecution": "june10"
+          },
+          {
+            "id": 2,
+            "name": "Test2",
+            "hasPassed": false,
+            "duration": "3min30s",
+            "latestExecution": "june12"
+          },
+          {
+            "id": 3,
+            "name": "Test3",
+            "hasPassed": true,
+            "duration": "3min30s",
+            "latestExecution": "june5"
+          }
+    ]
+   
+}
