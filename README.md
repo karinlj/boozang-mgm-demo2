@@ -46,5 +46,4 @@ Then use the dist folder you get.
 
 ## Acknowledgements
 
-Thank's to The Net Ninja.  
-`https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg`
+Thank's to [The Net Ninja ](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
