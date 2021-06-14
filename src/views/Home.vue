@@ -23,11 +23,9 @@
           </div>
           <div v-else>Loading...</div>
         </div>
-
         <!-- <div class="col s12 m6 l3">
           <License></License>
         </div>
-
         <div class="col s12 m6 l3">
           <BugReports></BugReports>
         </div> -->
@@ -44,6 +42,7 @@ import Tester from "../types/Tester";
 import ListProjects from "../components/projects/ListProjects.vue";
 import ListTesters from "../components/testers/ListTesters.vue";
 import ListTests from "../components/tests/ListTests.vue";
+import { getData } from "../composables/fetchFunctions";
 
 export default defineComponent({
   name: "Home",
@@ -53,88 +52,36 @@ export default defineComponent({
     ListTests,
   },
   setup() {
-    const error = ref(null);
+    const error = ref<any>(null);
     const tests = ref<Test[]>([]);
     const projects = ref<Project[]>([]);
     const testers = ref<Tester[]>([]);
-    // {
-    //   id: 1,
-    //   name: "Test1",
-    //   hasPassed: true,
-    //   duration: "3min30s",
-    //   latestExecution: "jan10",
-    // },
-    // {
-    //   id: 2,
-    //   name: "Test2",
-    //   hasPassed: false,
-    //   duration: "3min30s",
-    //   latestExecution: "jan10",
-    // },
-    // {
-    //   id: 3,
-    //   name: "Test3",
-    //   hasPassed: true,
-    //   duration: "3min30s",
-    //   latestExecution: "jan10",
-    // },
-    //]);
-    // const projects = ref<Project[]>([
-    //   {
-    //     id: 1,
-    //     name: "Project1",
-    //     lastUpdated: "jan10",
-    //     numberOfTesters: 3,
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Project2",
-    //     lastUpdated: "jan10",
-    //     numberOfTesters: 4,
-    //   },
-    //   {
-    //     id: 3,
-    //     name: "Project3",
-    //     lastUpdated: "jan10",
-    //     numberOfTesters: 2,
-    //   },
-    // ]);
-    // const testers = ref<Tester[]>([
-    //   {
-    //     id: 1,
-    //     firstname: "Hugo",
-    //     lastname: "Ljunggren",
-    //     isActive: true,
-    //     latestActivity: "jan10",
-    //   },
-    //   {
-    //     id: 2,
-    //     firstname: "Filip",
-    //     lastname: "Ljunggren",
-    //     isActive: false,
-    //     latestActivity: "jan10",
-    //   },
-    //   {
-    //     id: 3,
-    //     firstname: "Mats",
-    //     lastname: "Ljunggren",
-    //     isActive: true,
-    //     latestActivity: "jan10",
-    //   },
-    // ]);
+
+    const testsUrl = "http://localhost:9000/tests";
+
     const loadtests = async () => {
-      try {
-        let data = await fetch("http://localhost:9000/tests");
-        // console.log("data: ", data);
-        if (!data.ok) {
-          throw Error("Sorry, no data available");
-        }
-        //.value to update the ref
-        tests.value = await data.json();
-      } catch (err) {
-        error.value = err.message;
-        // console.log(" error.value: ", error.value);
+      const testsFromServer = await getData(testsUrl);
+      tests.value = testsFromServer;
+
+      if (testsFromServer) {
+        error.value = null;
+      } else {
+        error.value = "Sorry, no data available";
+        console.log(error.value);
       }
+
+      // try {
+      //   let data = await fetch("http://localhost:9000/tests");
+      //   // console.log("data: ", data);
+      //   if (!data.ok) {
+      //     throw Error("Sorry, no data available");
+      //   }
+      //   //.value to update the ref
+      //   tests.value = await data.json();
+      // } catch (err) {
+      //   error.value = err.message;
+      //   // console.log(" error.value: ", error.value);
+      // }
     };
     loadtests();
 
@@ -156,7 +103,7 @@ export default defineComponent({
     const loadtesters = async () => {
       try {
         let data = await fetch("http://localhost:9000/testers");
-        console.log("data: ", data);
+        //console.log("data: ", data);
         if (!data.ok) {
           throw Error("Sorry, no data available");
         }
