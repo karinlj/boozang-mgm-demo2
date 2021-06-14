@@ -21,6 +21,50 @@
             "duration": "3min30s",
             "latestExecution": "june5"
           }
+    ],
+    "projects":[
+        {
+            "id": 1,
+            "name": "Project1",
+            "numberOfTesters": 3,
+            "lastUpdated": "june10"
+          },
+          {
+            "id": 2,
+            "name": "Project2",
+            "numberOfTesters": 5,
+            "lastUpdated": "june5"
+          },
+          {
+            "id": 3,
+            "name": "Project3",
+            "numberOfTesters": 2,
+            "lastUpdated": "june3"
+          }
+    ],
+
+    "testers":[
+        {
+            "id": 1,
+            "firstname": "Hugo",
+            "lastname": "Ljunggren",
+            "isActive": true,
+            "latestActivity": "june13"
+          },
+          {
+            "id": 2,
+            "firstname": "Filip",
+            "lastname": "Ljunggren",
+            "isActive": true,
+            "latestActivity": "june5"
+          },
+          {
+            "id": 3,
+            "firstname": "Mats",
+            "lastname": "Ljunggren",
+            "isActive": true,
+            "latestActivity": "june10"
+          }
     ]
    
 }
